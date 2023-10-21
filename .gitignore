@@ -1,0 +1,11 @@
+/target/
+/dependency-reduced-pom.xml
+/final-year-project.iml
+*.tmp
+/PySpark/text_category_classifier_model/
+/PySpark/linear_classifier_model/
+/.idea/
+/out/
+/checkpoint/
+/input/
+/venv/

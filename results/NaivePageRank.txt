@@ -1,0 +1,5 @@
+Vertex d has rank 0.521363299580143
+Vertex e has rank 1.3358854038034076
+Vertex a has rank 1.310693998518152
+Vertex b has rank 0.521363299580143
+Vertex c has rank 1.3106939985181518

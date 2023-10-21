@@ -1,0 +1,400 @@
+Week 1 (19/09/22 - 25/09/22)
+Tasks performed 
+1. Read Chapters 5-8 of Hadoop the Definitive Guide
+2. Understood the anatomy of MapReduce Jobs and how they work within Hadoop
+3. Had a look at configuration tuning for different type of requirements
+4. Understood different file types of formats and how to manipulate them in Hadoop
+5. Performed testing on different MapReduce classes using Junit & Mockito
+6. Had a look at different MapReduce features
+7. Started writing the project plan
+
+Problems encountered
+
+1. Using Junit & Mockito for mocking objects 
+2. Understanding advanced Hadoop configuration settings
+3. Documenting for writing the Project Plan
+
+Next Steps
+
+1. Further research Hadoop, Spark and Big Data Analytics
+2. Finish the first draft of the project plan
+3. Set up Jira and GitLab and hook them together
+
+
+Week 2 (26/09/22 - 02/10/22)
+
+Tasks Performed
+
+1. Read Chapters 9-10 of Hadoop the Definitive Guide
+2. Read Chapters 1-3 of Big Data Analytics
+3. Gained insight into the Spark ecosystem
+4. Understood the use of Big Data Analytics tools compared to the classic ETL approach
+5. Understood differences between Hadoop and Spark and advantages of each
+6. Finished writing the first draft of the project plan
+7. Researched repositories and API-s to use for web scraping for problem 1 & 2
+8. Set up Jira & GitLab and hooked them together
+9. Started working on problem 1 in a feature branch
+
+Problems encountered
+
+1. Finding a good data source for web scraping data
+2. Setting up Spark in pseudo distributed mode on Windows
+3. Quickly understanding the Spark API and ecosystem 
+
+Next Steps
+
+1. Research different data sources for problems 1 and 2 
+2. Finish first version of the word count problem
+3. Perform SE refactoring
+
+
+Week 3 (03/10/22 - 09/10/22)
+
+Tasks Performed
+
+1. Researched different data sources for Big Data Analytics for problems 1 & 2
+2. Found Common Crawl data sources website - a massive database of web scrapped data of petabytes of data
+3. Finished version 1 of the Word Count Problem which works with normal, plain text and files
+4. Tested Word Count v1 on data sources of various sizes
+5. Finished version 2 of the Word Count Problem which parses .wet files archived with gzip .gz from the Common Crawl database
+6. Tested Word Count v2 with a massive Common Crawl scrapped web data source from 2013 that has 55000 websites
+7. Refactored Word Count v1 and v2 based on SE principles and implemented an efficient clean up method for the scrapped data
+
+Problems Encountered
+
+1. Parsing the .wet.gz files efficiently
+2. Creating a good word parser system to clean up undesirable input (I.e. words with special chars (emojis, commas, dots, etc.))
+3. Adapt to the new Hadoop API using Tool and Configurable
+
+Next Steps
+
+1. Research cloud solutions or other distributed solutions to deploy my MR programs
+2. Set up CI/CD with Jenkins
+3. Fine tune the existing problems
+
+
+Week 4 (10/10/22 - 16/10/22)
+
+Tasks Performed
+
+1. Fine tuned the word count implementation 
+2. Researched distributed solutions for both cloud and on prem 
+3. Reached out to the CIM team to use the RHUL cluster
+4. Set up a Cloudera VM with 1 master and 3 workers on my PC and ran the word count problem
+5. Researched setting up CI/CD using Jenkins and set up a local server on my laptop
+6. Tried to create an Azure and Amazon cloud clusters
+
+Problems Encountered
+
+1. Efficiently running the Cloudera VM on my machine was difficult because of the VM high memory requirements. Ended up not being efficient.
+2. Was unsuccessful in creating Cloud clusters with free accounts because these was a service reserved for paid subscriptions
+3. Was unsuccessful in hooking up GitLab with my local Jenkins server because GitLab only allows Web servers
+
+Next Steps
+
+1. Looking up into setting up a Gitlab CI/CD
+2. Discussing with the CIM team for using their cluster
+3. Finish problem 2 and start writing the other reports
+
+Week 5 (17/10/22 - 23/10/22)
+
+Tasks Performed
+
+1. Finished Problem 2 - Distributed Word Grep and applied to the 60k websites Common Crawl repo
+2. Was granted access to the RHUL Big Data cluster and made initial attempt to connect to it 
+3. Implemented CI/CD using a locally installed Gitlab Runner on my machine that uses a Docker agent 
+4. Every git push now successfully triggers a pipeline run for quality checking, building, and testing
+5. Made initial attempt at containerising the application using Docker and deploying it as an image on my personal Docker Hub
+6. Started the MapReduce & Problems Encountered reports
+7. Planned the second meeting with the advisor
+
+Problems Encountered
+
+1. Docker consumes a lot of resources while running either the build job or the push job so I have to close my IDE while running Docker Jobs
+2. Connecting to the RHUL cluster proved problematic as I encountered config issues with the ssh
+
+Next Steps
+
+1. Add more tasks to the pipeline so it does comprehensive testing, packaging, building, and deploying to the Docker Hub as a tag 
+2. Add a more comprehensive testing suite for both Problems
+3. Finish the MR, Problems Encountered & Experience running programs on a cluster reports
+4. Start testing and experimenting with the cluster and make observations of performance
+
+Week 6 (24/10/22 - 30/10/22)
+
+Tasks Performed
+
+1. Refactored the Reducer for the Word Grep problem to consider end line words when splitting the website into phrases
+2. Added an extensive testing suite for the Word Grep and Word Count problems
+3. Added performance testing for the Word Count & Word Grep Problems
+4. Finished initial drafts for MR, Problems Encountered & Experience running programs on a cluster reports
+
+Problems Encountered
+
+1. Writing relevant tests for the problems
+2. Creating performance tests for the problems
+3. Writing the Experience running programs on a cluster reports because of the ambiguity of the tasks
+4. Due to other coursework, I didn't manage to start experimenting with the cluster or configuring the pipeline
+
+Next Steps
+
+1. Finish the pipeline configuration
+2. Finish Docker adoption
+3. Start experimenting with the RHUL cluster
+
+Week 7 (31/10/22 - 06/11/22)
+
+Tasks Performed
+
+1. Added Performance testing in the testing suite to measure execution time
+2. Separated the integration & unit tests into 2 testing suites (handled by a specialised class)
+3. Configured the maven test to run the testing suite and output the results to a xml file
+4. Added integration & unit tests jobs into the pipeline 
+5. Finished Docker adoption & pipeline configuration
+
+Problem Encountered
+
+1. Creating efficient performance tests
+2. Creating a testing suite file with JUnit5
+3. Integrating the tests into the pipeline 
+
+Next Steps
+
+1. Start experimenting with the RHUL cluster
+2. Start writing the experience with performance analysis, and parameter tuning; recommendation for optimal parameter setting for each of the analysed problem reports
+
+Week 8 (07/11/22 - 13/11/22)
+
+Tasks Performed
+
+1. Migrated the test suite to use the RHUL Big Data cluster using ssh
+2. Fixed the CI/CD pipeline
+3. Added a linting task in the CI/CD pipeline
+4. Integrated the programs to work on the RHUL cluster using ssh
+
+Problems Encountered
+
+1. Connecting with ssh to the RHUL cluster
+2. For many cluster runs, the MR job was executed locally because of some issue with the maven run config, the mitigation was to launch a ssh terminal from Intelij, package the drivers classes into a jar and use that to run the programs on the cluster
+3. Creating a proper linting configuration (I finally used Google Checks) and configure my Intelji code formatting to accomodate to Google Checks requirenments
+
+Next Steps
+
+1. Perform extensive performance testing & parameter tuning
+2. Start writing the last 2 reports
+
+Week 9 (14/11/22 - 20/11/22)
+
+Tasks Performed
+
+1. Performed extensive performance testing using all the common crawl file partitions (from 120MB to 1800MB).
+2. Plotted the found data on graphs showing the number of nodes vs data size vs execution time.
+3. Compiled all the reports into a single one. Wrote up until the Word Grep implementation (aprox 5000 words).
+4. Performed several experiments on the cluster to optimize parameters and performance.
+5. Refactored the Driver into its own seprate component to be used by all the specialised Drivers.
+6. Fixed jar executables creation and added 2 mode of executions directly at run time (with a command line arg). The 2 modes are: local and distributed.
+
+Problems Encountered
+
+1. Performing adequate performance testing
+2. Refactoring the Driver into its own class because I had to account for multiple run time specific settings
+3. Correctly extracting the programs into jars to work both on local and distributed mode
+
+Next Steps
+
+1. Finish the Interim report
+2. Add more unit & integration testing
+
+Week 10 (21/11/22 – 27/11/22)
+
+Tasks Performed
+
+1. Finished the interim report
+2. Refactored the word count v2 and word grep into a facade
+3. Added more unit and integration testing
+4. Packaged the programs into jars
+5. Updated READ.me with all the required info about the project and how to run the programs.
+
+Problems Encountered
+
+1. Efficiently package the jars using the maven shade plugin
+2. Combining all the required information into the interim report
+
+Next Steps
+
+1. Document on Natural Language processor classification for text categories
+2. Start working on the Wikipedia page rank algorithm implementation with Spark
+
+Week 17 (09/01/23 – 15/01/23)
+
+Tasks Performed
+
+1. Finished first version of the Page Rank algorithm that works will all wiki pages
+2. Learned the basics of Spark
+3. Created a parser for wiki page dumps that is processed into an rdd and then transformed into a graph
+4. Created version 2 of the page rank algorithm with the use of GraphX 
+
+Problems Encountered
+
+1. While updating an rdd multiple times, the maximum cache limit is Quickly reached. A solution for this is using checkpoints once a couple of iterations while updating the rdd.
+2. Created an efficient parser for the wiki dumps was complicated because of the sometimes poorly formatted dump structure. The solution included using multiple transformations and trying different approaches in the end choosing databricks xml parser with a predefined Struct type.
+
+Next Steps
+
+1. Improve the efficiency of the page rank algorithm
+2. Modify the program so after running the page rank on the entire wiki dump, it filters the rdd to output only biography pages
+
+Week 18 (16/01/23 - 22/01/23)
+
+Tasks Performed
+
+1. Improved the performance of the page rank by eliminating redundant variables, using hashing and with a proper use of caching the rdd in memory in a serialised format.
+2. Researched the way caching and serialization works and implemented in memory serialization with the use of a powerful serialization library called Kryo.
+3. Modified the page rank program so it figures out based on info-boxes if its a biography or not. I collected a list of all the biography info-boxes format and then during dump processing, the infobox is checked if it is part of that list.
+4. Researched ways to group pages in broader categories. Normal wiki categories are way too granular. Found out that the wiki categories graph is an acyclic direct graph with no strict hierarchical struct. This unfortunately means that a granular category can belong to multiple broader categories so this approach is not doable. The alternative solution to explore is using an NLP.
+
+Problems Encountered
+
+1. Kryo 5x version causes some errors with the Spark 3x version which result in weird, non existent errors at run time. Solved this by down grading to Kryo 4x.
+2. Finding a way to determine if a page is biographic was not straightforward and I had to get creative with the info-boxes approach.
+3. Trying to find a way of using the wiki categories was time consuming and as mentioned it resulted that is not worth doing.
+
+Next Steps
+
+1. Research NLPs to group pages into categories based on their text.
+2. Find a good labeled text dataset (or construct one if non suitable exists).
+3. Train the model and test it on the wiki dump
+
+Week 19 (23/01/23 - 29/01/23)
+
+Tasks Performed
+
+1. Created the first version of the NLP classifier and trained it on large amount of data to classify text into 5 categories. It has 99% accuracy on test data.
+2. Researched the Wikipedia Knowledge Base and realised that since it is directed acyclic graph with no hierarchy, I can't use it for my category classification
+(to infer main category from granular category since a granular category could have in theory multiple main categories as parents).
+3. Researched other Knowledge Bases created from wikipedia but again, it was too complicated and computationally expensive to use them.
+4. Researched main personal occupational categories areas for my NLP and created an initial list.
+
+Problems Encountered
+
+1. Researching the KB for Wiki categories was tedious and I initially through it was possible by reconstructing the graph.
+2. Finding good quality datasets and transforming them into the same format (.csv) was complicated.
+
+Next Steps
+
+1. Improve the NLP by adding more classes (through more datasets).
+2. Refactor the Jupyter Notebook into a standalone python file.
+3. After training, save the model and its configuration into a file so it can be easily just loaded and uses for prediction in the future.
+
+Week 20 (30/01/23 - 05/02/23)
+
+1. Refactored the model into its own python file.
+2. Added 4 more classes of 1000 entries each using several datasource's
+3. Refactored the pyton file to use pickle to save and load the model
+4. Tested the model on preliminary wikipedia data with good results
+
+Problems Encountered
+
+1. Saving and loading the model was more problematic than I through
+2. There is a significant performance overhead when running the model on large amounts of data
+
+Next Steps
+
+1. Add even more categories and aim to have 20k entries for the model
+2. Create some spark scripts to load and parse large datasets in order to generate data for the model
+
+Week 21 (06/02/23 - 12/02/23)
+
+1. Created some java spark classes in order to parse csv, json and text data into my desired csv format
+2. Collected numerous online datasets and started to put them together
+3. Refactored and improved the performance and accuracy of the model
+
+Problems Encountered
+
+1. Fining useful datasets online for my semantic requirements proved to be a challenge
+2. Creating fast and useful spark file parsers was complicated
+
+Next Steps
+
+1. Aim to have 9 categories for the model
+2. Finalize the data collection part
+
+Week 22 (13/02/23 - 19/02/23)
+
+1. Finished the data collection part, now I have 9 classes and 20k entries for each
+2. Started proving the quality of my data by hand collecting wikipedia articles from
+ each topic and combining it with my existing data
+3. Despite the large number of samples that are sometimes semantically close, managed to get a 91% accuracy
+
+Problems Encountered
+
+1. Collecting the wikipedia articles took a lot of effort and time and required quite a bit of thought
+2. Initially, because of some poor quality data, my performance started to decrease significantly to about 80%
+
+Next Steps
+
+1. Create the spark version of the model.
+2. Collect more wikipedia data for training.
+
+Week 23(20/02 - 26/02/23)
+
+1. Created a spark version of my python scikit learn model
+2. Collected more data from wikipedia to increase the quality of my data
+
+Problems Encountered
+
+1. Converting from python to spark was tedious as the pandas transformations and spark transformations are different and
+2. Scikit-learn is not available in a distributed environment so I had to re-do my methods using the Spark Mlib
+
+Next Steps
+
+1. Deploy the model on the RHUL cluster for training to compare its performance and accuracy to the one ran on my laptop kernel
+2. Run the model on wikipedia data and check preliminary results
+
+Week 24(27/02/23 - 05/03/23)
+
+1. Found out that the RHUL Cluster has an old version of Spark on it so I couldn't use pandas spark api and had to move to
+spark dataframes.
+2. Experimented with deploying the model on the cluster by creating the virtual environment and shipping it with the model
+
+Problems Encountered
+
+1. Converting from spark pandas to spark dataframes was tedious
+2. It was complicated running the python model on the cluster because of the virtual environment that had to be shipped with it.
+Furthermore, nltk had some packages that had to be downloaded programmatically that I had to ship with the environment as well.
+
+Next Steps
+
+1. Put both programs together and create the final historical score program
+2. Work on the Final Report
+
+Week 25 (06/03/23 - 12/03/23)
+
+1. Ran the programs together and got the final significance scores.
+2. Made good progress on the report.
+
+Problems Encountered
+
+1. Experimenting on the cluster with different run time configurations was tedious
+2. The cluster was down for 2 days, not scheduling any jobs
+
+Next Steps
+
+1. Finalise final year report.
+2. Finalize programs and refactor them.
+
+Week 26 (13/03/23 - 19/03/23)
+
+1. Finalised the report.
+2. Finalised programs and performed extra refactoring.
+3. Registered the deployment video.
+
+Problems Encountered
+
+1. Cluster was down for 3 days when high loads were being passed on. In the end it was fixed, but with 2 nodes
+being temporally removed from the cluster.
+2. Putting all the reports together in a final format was tedious.
+
+Next Steps
+
+N/A project finished
